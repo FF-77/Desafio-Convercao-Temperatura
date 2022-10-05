@@ -1,0 +1,14 @@
+version: '3.3'
+
+networks:
+  app_rede:
+    driver: bridge
+
+services:
+  conversao-tempeatura:
+    image: franciscofrancod/conversao-temperatura:v1
+    restart: always
+    networks:
+      - app_rede
+    ports:
+      - 8080:8080
